@@ -1,4 +1,4 @@
-import 'package:github_signin/src/consts.dart';
+import 'package:github_signin_promax/src/consts.dart';
 
 class GithubSignInParams {
   String clientId;

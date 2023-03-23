@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:github_signin/src/consts.dart';
-import 'package:github_signin/src/signin_params.dart';
-import 'package:github_signin/src/signin_response.dart';
+import 'package:github_signin_promax/src/consts.dart';
+import 'package:github_signin_promax/src/signin_params.dart';
+import 'package:github_signin_promax/src/signin_response.dart';
 import 'package:http/http.dart' as http;
 
 class GithubSigninScreen extends StatefulWidget {

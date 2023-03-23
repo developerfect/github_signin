@@ -6,7 +6,7 @@ Sign In With GitHub
 Add package dependency
 
 ```yaml
-github_signin: ^0.0.1
+github_signin_promax: ^0.0.1
 ```
 
 Perform `Sign In With GitHub`
@@ -14,13 +14,13 @@ Perform `Sign In With GitHub`
 ```dart
 
     var params = GithubSignInParams(
-          clientId: '78e934c70db313a3ec9b',
-          clientSecret: '74a8f1dbcd5a1fac59516969bb874e634faf666b',
+          clientId: 'XXXXXXXXXXXXXXX',
+          clientSecret: 'XXXXXXXXXXXX',
           redirectUrl: 'http://localhost:3000/auth/github/callback',
           scopes: 'read:user,user:email',
         );
         
-      Navigator.of(Get.context!).push(MaterialPageRoute(builder: (builder) {
+      Navigator.of(context).push(MaterialPageRoute(builder: (builder) {
         return GithubSigninScreen(
           params: params,
           headerColor: theme.p700,
