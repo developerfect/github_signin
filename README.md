@@ -1,4 +1,4 @@
-# dart-github-sign-in
+# github_signin_promax
 Sign In With GitHub
 
 ## Getting Started
@@ -6,7 +6,7 @@ Sign In With GitHub
 Add package dependency
 
 ```yaml
-github_signin_promax: ^0.0.1
+github_signin_promax: ^0.0.3
 ```
 
 Perform `Sign In With GitHub`
