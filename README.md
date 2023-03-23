@@ -7,7 +7,7 @@ https://pub.dev/packages/github_signin_promax
 Add package dependency
 
 ```yaml
-github_signin: ^0.0.5
+github_signin_promax: ^0.0.6
 ```
 
 Perform `Sign In With GitHub`

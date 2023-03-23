@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
       response = '';
     });
     var params = GithubSignInParams(
-      clientId: '78e934c70db313a3ec9b',
-      clientSecret: '74a8f1dbcd5a1fac59516969bb874e634faf666b',
+      clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+      clientSecret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
       redirectUrl: 'http://localhost:3000/auth/github/callback',
       scopes: 'read:user,user:email',
     );

@@ -1,6 +1,6 @@
 name: github_signin_promax
 description: The Github sign in with Oauth
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/developerfect/github_signin
 
 environment:
