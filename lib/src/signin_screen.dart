@@ -46,6 +46,16 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
         appBar: AppBar(
           title: Text('${widget.title}'),
           backgroundColor: widget.headerColor,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: widget.headerTextColor),
+            onPressed: () {
+              GithubSignInResponse res = GithubSignInResponse(
+                status: SignInStatus.failed,
+                error: 'User cancelled',
+              );
+              Navigator.of(context).pop(res);
+            },
+          ),
         ),
         body: Column(
           children: [
@@ -109,7 +119,7 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
       Navigator.of(context).pop(value);
     }).catchError((onError) {
       GithubSignInResponse res = GithubSignInResponse(
-        status: SignInStatus.fail,
+        status: SignInStatus.failed,
         error: onError.toString(),
       );
       Navigator.of(context).pop(res);
@@ -161,7 +171,7 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
         String errorDetail =
             body['error_description'] ?? 'Unknown Error: ${body.toString()}';
         GithubSignInResponse res = GithubSignInResponse(
-          status: SignInStatus.fail,
+          status: SignInStatus.failed,
           error: errorDetail,
         );
         return res;
@@ -169,13 +179,13 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
       //endregion
       //region handle success case
       return GithubSignInResponse(
-        status: SignInStatus.ok,
+        status: SignInStatus.success,
         code: '${body['access_token']}',
       );
       //endregion
     } catch (e) {
       return GithubSignInResponse(
-          status: SignInStatus.fail, error: 'Error: ${e.toString()}');
+          status: SignInStatus.failed, error: 'Error: ${e.toString()}');
     }
   }
 }

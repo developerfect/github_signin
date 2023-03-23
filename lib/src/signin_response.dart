@@ -15,4 +15,4 @@ class GithubSignInResponse {
   }
 }
 
-enum SignInStatus { ok, fail, cancel }
+enum SignInStatus { success, failed, canceled }

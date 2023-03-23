@@ -164,13 +164,13 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "github_signin",
+      "name": "github_signin_promax",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-03-23T05:03:39.681168Z",
+  "generated": "2023-03-23T07:28:47.173872Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }
