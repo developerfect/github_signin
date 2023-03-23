@@ -1,9 +1,16 @@
 import 'package:github_signin_promax/src/consts.dart';
 
 class GithubSignInParams {
+  /// the github [clientId]
   String clientId;
+
+  /// the github [clientSecret]
   String clientSecret;
+
+  /// the [redirectUrl]
   String redirectUrl;
+
+  /// the [scopes] of github api
   String scopes;
 
   GithubSignInParams({

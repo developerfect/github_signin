@@ -1,6 +1,6 @@
 name: github_signin_promax
-description: The Github sign in with Oauth
-version: 0.0.6
+description: the GitHub OAuth Login package! This package is designed to simplify the process of implementing GitHub OAuth login functionality in your Flutter apps. With just a few lines of code, you can easily authenticate your users with their GitHub accounts, giving them access to your app's features and data.
+version: 0.0.7
 homepage: https://github.com/developerfect/github_signin
 
 environment:

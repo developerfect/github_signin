@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
       response = '';
     });
     var params = GithubSignInParams(
-      clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-      clientSecret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+      clientId: '78e934c70db313a3ec9b',
+      clientSecret: '74a8f1dbcd5a1fac59516969bb874e634faf666b',
       redirectUrl: 'http://localhost:3000/auth/github/callback',
       scopes: 'read:user,user:email',
     );
@@ -66,13 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).push(MaterialPageRoute(builder: (builder) {
       return GithubSigninScreen(
         params: params,
-        headerColor: Colors.green,
-        title: 'Login with github',
       );
     })).then((value) {
       setState(() {
-        response += '✅ Status: \t ${(value as GithubSignInResponse).status}\n\n';
-        response += '✅ Code: \t ${(value).code}\n\n';
+        response +=
+            '✅ Status: \t ${(value as GithubSignInResponse).status}\n\n';
+        response += '✅ Code: \t ${(value).accessToken}\n\n';
         response += '✅ Error: \t ${(value).error}\n\n';
       });
     });

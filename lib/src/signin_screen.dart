@@ -8,11 +8,22 @@ import 'package:github_signin_promax/src/signin_response.dart';
 import 'package:http/http.dart' as http;
 
 class GithubSigninScreen extends StatefulWidget {
+  /// the [headerColor] of the [AppBar]
   final Color? headerColor;
+
+  /// the [headerTextColor] of the [AppBar]
   final Color? headerTextColor;
+
+  /// flag to enable or [SafeArea] top
   final bool? safeAreaTop;
+
+  /// flag to enable or [SafeArea] bottom
   final bool? safeAreaBottom;
+
+  /// the [title] of the [AppBar]
   final String? title;
+
+  /// the required [GithubSignInParams] [params]
   final GithubSignInParams params;
 
   const GithubSigninScreen({
@@ -30,12 +41,13 @@ class GithubSigninScreen extends StatefulWidget {
 }
 
 class _GithubSigninScreenState extends State<GithubSigninScreen> {
-  final double defaultPadding = 16.0;
-
   //endregion
+
+  /// flag to display the progressbar
   bool shouldShowLoading = false;
 
-  late InAppWebViewController webviewController;
+  /// the controller of [InAppWebViewController]
+  late InAppWebViewController webViewController;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +56,12 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
       bottom: widget.safeAreaBottom ?? false,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('${widget.title}'),
+          title: Text(
+            '${widget.title}',
+            style: TextStyle(
+              color: widget.headerTextColor,
+            ),
+          ),
           backgroundColor: widget.headerColor,
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: widget.headerTextColor),
@@ -127,8 +144,8 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
   }
 
   void onWebViewCreated(InAppWebViewController c) {
-    webviewController = c;
-    webviewController.loadUrl(
+    webViewController = c;
+    webViewController.loadUrl(
       urlRequest: URLRequest(
         url: Uri.parse(widget.params.combinedUrl()),
       ),
@@ -180,7 +197,7 @@ class _GithubSigninScreenState extends State<GithubSigninScreen> {
       //region handle success case
       return GithubSignInResponse(
         status: SignInStatus.success,
-        code: '${body['access_token']}',
+        accessToken: '${body['access_token']}',
       );
       //endregion
     } catch (e) {

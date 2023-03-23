@@ -1,17 +1,22 @@
 class GithubSignInResponse {
+  /// the [SignInStatus] [status]
   SignInStatus status;
-  String? code;
+
+  /// the [accessToken] from Github
+  String? accessToken;
+
+  /// the [error] message when call the github API
   String? error;
 
   GithubSignInResponse({
     required this.status,
-    this.code,
+    this.accessToken,
     this.error,
   });
 
   @override
   String toString() {
-    return 'GithubSignInResponse{status: $status, code: $code, error: $error}';
+    return 'GithubSignInResponse{status: $status, accessToken: $accessToken, error: $error}';
   }
 }
 

@@ -1,3 +1,6 @@
+## 0.0.7
+- Change variable
+- Update dartdoc
 ## 0.0.6
 - Update readme
 ## 0.0.5
