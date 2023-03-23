@@ -1,7 +1,7 @@
 name: github_signin
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/developerfect/github_signin
 
 environment:
   sdk: '>=2.19.4 <3.0.0'
