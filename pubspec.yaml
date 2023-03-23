@@ -1,5 +1,5 @@
 name: github_signin
-description: A new Flutter package project.
+description: The Github sign in with Oauth
 version: 0.0.1
 homepage: https://github.com/developerfect/github_signin
 
