@@ -7,28 +7,31 @@ https://pub.dev/packages/github_signin_promax
 Add package dependency
 
 ```yaml
-github_signin: ^0.0.1
+github_signin: ^0.0.4
 ```
 
 Perform `Sign In With GitHub`
 ## How to use
 ```dart
+    
+    // create required params
     var params = GithubSignInParams(
-  clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-  clientSecret: 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
-  redirectUrl: 'http://localhost:3000/auth/github/callback',
-  scopes: 'read:user,user:email',
-);
+      clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+      clientSecret: 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
+      redirectUrl: 'http://localhost:3000/auth/github/callback',
+      scopes: 'read:user,user:email',
+    );
 
-Navigator.of(context).push(MaterialPageRoute(builder: (builder) {
-return GithubSigninScreen(
-params: params,
-headerColor: Colors.green,
-title: 'Login with github',
-);
-})).then((value) {
-// TOTO: handle the response value as a GithubSignInResponse instance
-});
+    // Push [GithubSigninScreen] to perform login then get the [GithubSignInResponse]
+    Navigator.of(context).push(MaterialPageRoute(builder: (builder) {
+      return GithubSigninScreen(
+        params: params,
+        headerColor: Colors.green,
+        title: 'Login with github',
+      );
+    })).then((value) {
+      // TOTO: handle the response value as a GithubSignInResponse instance
+    });
 
 ```
 
