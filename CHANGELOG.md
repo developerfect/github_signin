@@ -1,3 +1,8 @@
+## 0.0.8+1
+- Bump flutter sdk version
+- Update dartdoc
+## 0.0.8
+- Bump flutter sdk version
 ## 0.0.7
 - Change variable
 - Update dartdoc
